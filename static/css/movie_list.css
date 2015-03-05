@@ -34,7 +34,7 @@ body {
 	display: block;
 }
 
-#mainTopLeftMenu,#mainTopLeftChannel,#mainTopRight {
+#mainTopLeftMenu,#mainTopLeftChannel,#mainTopRight,#footerLogo {
 	display: none;
 }
 
@@ -115,6 +115,7 @@ body {
 
 #movieList li .content-item-over {
 	position: absolute;
+	width: 100%;
 	display: none;
 }
 
@@ -128,13 +129,34 @@ body {
 	color: #ea0465;
 }
 
+#movieContent {
+	min-height: 650px;
+	padding-left: 25px;	
+}
 
+/* #moviePlayer {
+	width: 625px;
+	height: 350px;
+}
+ */
+#movieInfo {
+	padding-right: 20px;
+}
+
+#movieContent #movieInfo #movieTitle {
+	color: #ea0465;	
+}
+
+#relationList{
+	display: none;
+}
 
 .footer {
 	height: 43px;
 	background-color: #444444;
 	color: #CCC;
 	text-align: right;
+	font-size: 11px;
 }
 
 .footer p {
@@ -142,40 +164,74 @@ body {
 }
 
 
+/* Medium devices (desktops, 768px and up) 
+@media (min-width: @screen-md-min) {
+*/
 
+@media only screen and (min-width: 768px) {
+
+.panel {	margin-bottom: 0px;}
+
+.footer {
+	font-size: 14px;
+}
+
+#SNSList {
+	display: block;
+}
+
+#footerLogo{
+	display: inline;
+}
+
+#mainTopLeft #mainTopLeftChannel {
+	height: 236px;
+}	
+
+#movieList li {
+	width: 235px;
+	height: 200px;
+}
+
+#movieList li .content-item-over {
+	width: 225px;
+}
 
 #movieContent {
-	min-height: 300px;
-	padding-left: 25px;
-	
-	
-	
+	min-height: 650px;
 }
 
-#moviePlayer {
-	width: 625px;
+/* #moviePlayer {
+	width: 525px;
 	height: 350px;
 }
-
-#movieContent #movieInfo #movieTitle {
-	color: #ea0465;	
+ */
+#mainTopRight #ranking {
+	margin-top: 19px;	
 }
-
-
+	
+	
+	
+	
+}
 
 /* Medium devices (desktops, 992px and up) 
 @media (min-width: @screen-md-min) {
 */
 @media only screen and (min-width: 992px) {
-	
+
 .panel {	margin-bottom: 0px;}
 
-#mainTopLeftMenu {
+#topChannelList {
+	display: none;
+}
+
+#mainTopLeftMenu,#SNSList,#mainTopLeftChannel,#mainTopRight,#relationList {
 	display: block;
 }
 
-#SNSList {
-	display: block;
+#channelList li {
+	margin-bottom: 20px;	
 }
 
 #mainTopLeft #mainTopLeftChannel {
@@ -183,7 +239,6 @@ body {
 }	
 
 #mainTopRight {
-	display: block;
 	height: 300px;
 }
 
@@ -199,62 +254,16 @@ body {
 
 
 #movieContent {
-	min-height: 300px;
-}
-
-
-#mainTopRight #ranking {
-	margin-top: 19px;	
-}
-
-
-}
-
-
-
-/* Large devices (large desktops, 1200px and up) 
-@media (min-width: @screen-lg-min) {
-*/
-@media only screen and (min-width: 1200px) {
-
-#topChannelList {
-	display: none;
-}
-
-#mainTopLeft #mainTopLeftChannel {
-	display: block;
-	height: 302px;
-}	
-
-#mainTopRight {
-	display: block;
-	height: 364px;
-}
-
-#channelList li {
-	margin-bottom: 20px;	
-}
-
-#movieContent {
 	min-height: 650px;
-}
-
-#movieList li {
-	width: 285px;
-	height: 245px;
-}
-
-#movieList li .content-item-over {
-	width: 275px;
-}
-
-#relationList {
-	height: 620px;
 }
 
 #relationContentList {
 	overflow: auto;
 	height: 550px;	
+}
+
+#mainTopRight #ranking {
+	margin-top: 19px;	
 }
 
 #relationContentList li {
@@ -270,6 +279,38 @@ body {
 #btnMore{
 	margin-top: 10px;
 }
+
+
+
+
+}
+
+/* Large devices (large desktops, 1200px and up) 
+@media (min-width: @screen-lg-min) {
+*/
+@media only screen and (min-width: 1200px) {
+
+#mainTopLeft #mainTopLeftChannel {
+	height: 302px;
+}	
+
+#mainTopRight {
+	height: 364px;
+}
+
+#movieList li {
+	width: 285px;
+	height: 245px;
+}
+
+#movieList li .content-item-over {
+	width: 275px;
+}
+
+#relationList {
+	height: 620px;
+}
+
 
 
 

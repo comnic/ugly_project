@@ -29,7 +29,7 @@
 			</div>
         </div>
     </div>
-    <div id="mainTopCenter" class="col-xs-12 col-sm-7 col-md-7">
+    <div id="mainTopCenter" class="col-xs-12 col-sm-12 col-md-7">
     	<div id="mainBanner">
         
             <div id="mainBannerCarousel" class="carousel slide" data-ride="carousel">
@@ -113,7 +113,7 @@
       	</div>   
       	
 		<div id="movieContent" class="modal-body">
-			<div class="col-md-9">
+			<div class="col-xs-12 col-sm-12 col-md-9">
 				<div id="moviePlayer">
 
 <!-- 16:9 aspect ratio -->
@@ -132,7 +132,7 @@
 					<p><h6 id="movieDesc">desc</h6></p>
 				</div>
 			</div>
-			<div id="relationList" class="col-md-3 panel panel-default" style="background-color: rgb(241,241,241);">
+			<div id="relationList" class="col-xs-12 col-sm-12 col-md-3 panel panel-default" style="background-color: rgb(241,241,241);">
 				<h4 id="relationTitle" class="ml10">BEAUTY STATION</h4>
 				
 				<ul id="relationContentList">
