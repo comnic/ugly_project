@@ -1,12 +1,13 @@
-<script src="/static/js/content.class.js"></script>
+<link href="/static/css/movie_list.css" rel="stylesheet" type="text/css">
+
 <script src="/static/js/movie_list.js"></script>
-<script type="text/javascript" src="/static/lib/jquery/jquery.waypoints.min.js"></script>
+
 <script>
 	var category_idx = '<?php echo($data['category']);?>';
 </script>
 
-<div id="mainTop" class="container">
-	<div id="mainTopLeft" class="col-md-2">
+<div id="mainTop" class="col-xs-12 col-sm-12 col-md-12">
+	<div id="mainTopLeft" class="col-xs-12 col-sm-2 col-md-2">
     	<div id="mainTopLeftMenu" class="panel panel-default">
     		<div class="panel-body">
 	        	<ul>
@@ -15,16 +16,20 @@
 			</div>
         </div>
         <div id="mainTopLeftChannel" class="panel panel-default">
-        	<div class="panel-body">
+        	<div class="panel-body" style="padding-right: 5px;">
 	        	<ul id="channelList">
-	            	<li><a href="/movie_list/index/1"><h5><span class="glyphicon glyphicon-facetime-video"></span> 트루미쇼 <span class="badge">1</span></h5></a></li>
-	            	<li><a href="/movie_list/index/2"><h5><span class="glyphicon glyphicon-facetime-video"></span> 홍스 광뷰티 </h5></a></li>
-	            	<li><a href="/movie_list/index/3"><h5><span class="glyphicon glyphicon-facetime-video"></span> 언니네 핫 초이스 </h5></a></li>
+<?php 
+	foreach($data['channels']['items'] as $item){
+?>
+	            	<li><a href="/movie_list/index/<?php echo($item['cc_idx']);?>"><h5><span class="glyphicon glyphicon-facetime-video"></span> <?php echo($item['cc_title']);?> <?php if($item['new_cnt'] > 0){ ?><span class="badge"><?php echo($item['new_cnt']);?></span><?php }?></h5></a></li>
+<?php 
+}
+?>
 	            </ul>
 			</div>
         </div>
     </div>
-    <div id="mainTopCenter" class="col-md-7">
+    <div id="mainTopCenter" class="col-xs-12 col-sm-7 col-md-7">
     	<div id="mainBanner">
         
             <div id="mainBannerCarousel" class="carousel slide" data-ride="carousel">
@@ -58,11 +63,10 @@
                 <span class="sr-only">&gt;</span>
               </a>
             </div>
-        
-        
+
         </div>
     </div>
-    <div id="mainTopRight" class="col-md-3 panel panel-default">
+    <div id="mainTopRight" class="col-xs-12 col-sm-3 col-md-3 panel panel-default">
     	<div class="panel-body">
         	<img src="../../static/images/title_best.png">
         	<img src="../../static/images/line_best.png">
@@ -81,15 +85,15 @@
         </div>
     </div>
 </div>
-<div id="mainList" class="container">
+<div id="mainList" class="col-xs-12 col-sm-12 col-md-12">
 
 	<div id="movieListWrap">
     	<ul id="movieList">
 
         </ul>
     </div>
-    <div id="btnMore" class="col-md-12 text-center">
-    	<button id="btnMoreContentList" type="button" class="col-md-12 btn btn-default">More...</button>
+    <div id="btnMore" class="col-xs-12 col-sm-12 col-md-12 text-center">
+    	<button id="btnMoreContentList" type="button" class="col-xs-12 col-sm-12 col-md-12 btn btn-default">More...</button>
 	</div>
 </div>
 <div></div>

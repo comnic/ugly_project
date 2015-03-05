@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
-
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
 
 body {
 	background-color: #f1f1f2;
@@ -54,10 +55,22 @@ body {
 	float: left;
 }
 
+#mainTopLeftMenu {
+	display: none;
+}
+
+#mainTopRight {
+	display: none;	
+}
+
+#SNSList {
+	display: none;
+}
 
 #mainTopLeft #mainTopLeftChannel {
 	margin-top: 10px;
-	height: 302px;
+	height: auto;
+	overflow: auto;
 }	
 
 
@@ -70,12 +83,12 @@ body {
 	
 #mainTopRight {
 	background-color: #fff;
-/* 	margin-left: 10px; */
 	height: 364px;
 	border: 1px solid #e6e7e8;
 	float: right;	
-	
+	overflow: auto;
 }
+
 
 #mainTopRight #ranking {
 	margin-left: 20px;
@@ -89,11 +102,12 @@ body {
 	margin-top: 10px;
 }
 
-#movieList li {
-	/* margin-top: 10px; */
-	width: 285px;
-	height: 245px;
+#movieListWrap, #movieList {
+	width: 100%;
+}
 
+#movieList li {
+	width: 100%;
 	float: left;
 	cursor: pointer;
 	
@@ -104,7 +118,6 @@ body {
 }
 
 #movieList li .content-item-over {
-	width: 285px;
 	position: absolute;
 	display: none;
 }
@@ -153,75 +166,68 @@ body {
 }
 
 
-/*
-	Dreamweaver Fluid Grid Properties
-	----------------------------------
-	dw-num-cols-mobile:		5;
-	dw-num-cols-tablet:		8;
-	dw-num-cols-desktop:	10;
-	dw-gutter-percentage:	25;
-	
-	Inspiration from "Responsive Web Design" by Ethan Marcotte 
-	http://www.alistapart.com/articles/responsive-web-design
-	
-	and Golden Grid System by Joni Korpi
-	http://goldengridsystem.com/
+
+/* Medium devices (desktops, 992px and up) 
+@media (min-width: @screen-md-min) {
 */
+@media only screen and (min-width: 992px) {
+	
+.panel {	margin-bottom: 0px;}
 
-/* Mobile Layout: 480px and below. */
-
-.gridContainer {
-	margin-left: auto;
-	margin-right: auto;
-	width: 87.36%;
-	padding-left: 1.82%;
-	padding-right: 1.82%;
-}
-#LayoutDiv1 {
-	clear: both;
-	float: left;
-	margin-left: 0;
-	width: 100%;
+#mainTopLeftMenu {
 	display: block;
 }
 
-/* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
-
-@media only screen and (min-width: 481px) {
-.gridContainer {
-	width: 90.675%;
-	padding-left: 1.1625%;
-	padding-right: 1.1625%;
-}
-#LayoutDiv1 {
-	clear: both;
-	float: left;
-	margin-left: 0;
-	width: 100%;
+#SNSList {
 	display: block;
 }
+
+#mainTopLeft #mainTopLeftChannel {
+	height: 236px;
+}	
+
+#mainTopRight {
+	display: block;
+	height: 300px;
+}
+
+#movieList li {
+	width: 235px;
+	height: 200px;
+}
+
+
+#movieList li .content-item-over {
+	width: 225px;
+}
+
+
 #movieContent {
 	min-height: 300px;
 }
 
+
+#mainTopRight #ranking {
+	margin-top: 19px;	
 }
 
-/* Desktop Layout: 769px to a max of 1232px.  Inherits styles from: Mobile Layout and Tablet Layout. */
 
-@media only screen and (min-width: 769px) {
-.gridContainer {
-	width: 88.2%;
-	max-width: 1232px;
-	padding-left: 0.9%;
-	padding-right: 0.9%;
-	margin: auto;
 }
-#LayoutDiv1 {
-	clear: both;
-	float: left;
-	margin-left: 0;
-	width: 100%;
+
+
+
+/* Large devices (large desktops, 1200px and up) 
+@media (min-width: @screen-lg-min) {
+*/
+@media only screen and (min-width: 1200px) {
+
+#mainTopLeft #mainTopLeftChannel {
+	height: 302px;
+}	
+
+#mainTopRight {
 	display: block;
+	height: 364px;
 }
 
 #channelList li {
@@ -230,6 +236,15 @@ body {
 
 #movieContent {
 	min-height: 650px;
+}
+
+#movieList li {
+	width: 285px;
+	height: 245px;
+}
+
+#movieList li .content-item-over {
+	width: 275px;
 }
 
 #relationList {

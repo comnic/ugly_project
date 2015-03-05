@@ -1,4 +1,7 @@
+</div>
+
 <p></p>
+
 <!-- footer -->
 <footer class="footer">
       <div class="container">

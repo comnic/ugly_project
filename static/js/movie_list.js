@@ -1,5 +1,8 @@
 // JavaScript Document
 
+document.write("<script src='/static/js/channel.class.js'></script>");
+document.write("<script src='/static/js/content.class.js'></script>");
+
 var page = 0;
 
 $(document).ready(function(e) {
@@ -41,7 +44,7 @@ $(document).ready(function(e) {
 				
 				var item = $.parseJSON(data);
 				
-				var cont = new Content(item.idx, item.category, item.kind, item.title, item.summary, item.cnt, item.movie_link);
+				var cont = new Content(item.idx, item.category, item.kind, item.title, item.summary, item.content, item.cnt, item.movie_link);
 				//console.log(cont);
 				
 				setContentView(cont);
@@ -86,8 +89,8 @@ function getMovieContent(cat, page){
 					$("#movieList").append("\
 						<li class=\"p5\" data-cidx=\""+item.idx+"\">\
 			            	<div>\
-            			    	<div class=\"content-item-over\"><img src=\"../../static/images/contents_on.png\"></div>\
-                    			<div class=\"content-item-img\"><img src=\"../../static/images/"+item.img+"\"></div>\
+            			    	<div class=\"content-item-over\"><img src=\"/static/images/contents_on.png\"></div>\
+                    			<div class=\"content-item-img\"><img src=\""+item.img+"\"></div>\
                     			<div class=\"content-item-txt\"><h6>"+ item.title +"</h6></div>\
                 			</div>\
             			</li>\
@@ -112,11 +115,13 @@ function setContentView(cont){
 	
 		//add relation list
 		$.each(data.items, function(idx, item){
-			//console.log(idx);
+			if(idx > 5)
+				return false;
+			
 			$("#relationContentList").append("\
 				<li class=\"p5\" data-cidx=\""+item.idx+"\">\
 					<div>\
-						<div class=\"col-md-6 thumbnail\"><img src=\"../../static/images/"+item.img+"\"></div>\
+						<div class=\"col-md-6 thumbnail\"><img src=\""+item.img+"\"></div>\
 						<div class=\"col-md-6 content-item-txt\"><h6>"+ item.title +"</h6></div>\
 	        		</div>\
     	        </li>\

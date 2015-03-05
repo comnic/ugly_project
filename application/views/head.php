@@ -7,6 +7,7 @@
 <!--<![endif]-->
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Beauty Station</title>
 <link href="/static/css/boilerplate.css" rel="stylesheet" type="text/css">
@@ -16,7 +17,6 @@
 <!-- link href="/static/lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" -->
 
 <link href="/static/css/common.css" rel="stylesheet" type="text/css">
-<link href="/static/css/movie_list.css" rel="stylesheet" type="text/css">
 
 <script type="text/javascript" src="/static/lib/jquery/jquery-1.11.2.min.js"></script>
 
@@ -27,7 +27,7 @@
 <script src="/static/lib/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="gridContainer clearfix">
+<div class="container">
 
 <div class="navbar navbar-fixed-top">
 

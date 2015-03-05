@@ -15,6 +15,7 @@ class Movie_list extends MH_Controller {
 	
 		$this->load->database();
 		$this->load->model('content_model');
+		$this->load->model('data_model');
 
 		$this->_segment = $this->uri->segment_array();
 	
@@ -34,6 +35,8 @@ class Movie_list extends MH_Controller {
 		$data['page'] = $this->_page;
 		$data['cntPerPage'] = $this->_cntPerPage;
 
+		$data['channels'] = $this->data_model->getChannelList("MV");
+				
 		$this->load->view('main', array("data"=>$data));
 		
 		$this->load->view('footer');
