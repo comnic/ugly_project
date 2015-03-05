@@ -115,7 +115,9 @@ body {
 
 #movieList li .content-item-over {
 	position: absolute;
-	width: 100%;
+	left: -1000px;
+	width: 0;
+	height: 0;
 	display: none;
 }
 
