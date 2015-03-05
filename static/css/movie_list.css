@@ -30,6 +30,14 @@ body {
 	height: 73px;
 }
 
+#topChannelList {
+	display: block;
+}
+
+#mainTopLeftMenu,#mainTopLeftChannel,#mainTopRight {
+	display: none;
+}
+
 #SNSList { 
 	margin-top: 25px;
 }
@@ -53,18 +61,6 @@ body {
 #mainTopLeft {
 	margin-left: 0px;
 	float: left;
-}
-
-#mainTopLeftMenu {
-	display: none;
-}
-
-#mainTopRight {
-	display: none;	
-}
-
-#SNSList {
-	display: none;
 }
 
 #mainTopLeft #mainTopLeftChannel {
@@ -221,7 +217,12 @@ body {
 */
 @media only screen and (min-width: 1200px) {
 
+#topChannelList {
+	display: none;
+}
+
 #mainTopLeft #mainTopLeftChannel {
+	display: block;
 	height: 302px;
 }	
 

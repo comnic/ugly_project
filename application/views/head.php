@@ -39,7 +39,7 @@
       </div>
  
       <!-- Everything you want hidden at 940px or less, place within here -->
-      <ul id="SNSList" class="navbar-nav pull-right">
+      <ul id="SNSList" class="collapse navbar-collapse navbar-nav pull-right">
         	<li><a href="https://www.facebook.com/beautystation2" target="_blank"><img src="/static/images/icon_sns_fb.png"></a></li>
 			<li><a href="#" target="_blank"><img src="/static/images/icon_sns_pinterest.png"></a></li>
           	<li><a href="#" target="_blank"><img src="/static/images/icon_sns_insta.png"></a></li>
@@ -47,5 +47,34 @@
 
     </div>
   </div>
+  
 </div>
-   
+
+<nav id="topChannelList" class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">채널목록</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+      <ul class="nav navbar-nav navbar-right">
+<?php 
+	foreach($data['channels']['items'] as $item){
+?>
+           	<li><a href="/movie_list/index/<?php echo($item['cc_idx']);?>"><h5><span class="glyphicon glyphicon-facetime-video"></span> <?php echo($item['cc_title']);?> <?php if($item['new_cnt'] > 0){ ?><span class="badge"><?php echo($item['new_cnt']);?></span><?php }?></h5></a></li>
+<?php 
+}
+?>          
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

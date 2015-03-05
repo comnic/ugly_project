@@ -23,7 +23,6 @@ class Movie_list extends MH_Controller {
 	
 	public function index()
 	{
-		$this->load->view('head');
 		if(count($this->_segment) >= 3){
 			$this->_category = $this->_segment[3];
 		}
@@ -36,7 +35,9 @@ class Movie_list extends MH_Controller {
 		$data['cntPerPage'] = $this->_cntPerPage;
 
 		$data['channels'] = $this->data_model->getChannelList("MV");
-				
+
+		$this->load->view('head', array("data"=>$data));
+		
 		$this->load->view('main', array("data"=>$data));
 		
 		$this->load->view('footer');
