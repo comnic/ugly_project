@@ -99,26 +99,22 @@
 <div></div>
 
 
-
-
-
 <!-- Modal Movie View -->
 <div id="modalMovieView" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-    
+  <div id="modalMovieDialog" class="modal-dialog">
+    <div id="contentArea" class="modal-content">
 		<div class="modal-header">
-        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        	<h4 class="modal-title">Movie View</h4>
+			<button id="bigModalCloseBtn" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        	<h4 class="modal-title"><img src="/static/images/player_logo.png"></h4>
       	</div>   
-      	
-		<div id="movieContent" class="modal-body">
-			<div class="col-xs-12 col-sm-12 col-md-9">
+    
+		<div id="movieContent" class="modal-body" style="padding: 0px;">
+			<div class="col-xs-12 col-sm-12 col-md-12">
 				<div id="moviePlayer">
 
 <!-- 16:9 aspect ratio -->
-<div id="youtubePlayer" class="embed-responsive embed-responsive-16by9 thumbnail">
-  
+<div id="youtubePlayer" class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/yTdqytmnMFg"></iframe>
 </div>
 
 <!-- 4:3 aspect ratio -->
@@ -132,16 +128,78 @@
 					<p><h6 id="movieDesc">desc</h6></p>
 				</div>
 			</div>
-			<div id="relationList" class="col-xs-12 col-sm-12 col-md-3 panel panel-default" style="background-color: rgb(241,241,241);">
-				<h4 id="relationTitle" class="ml10">BEAUTY STATION</h4>
-				
-				<ul id="relationContentList">
-				</ul>
-			
-			</div>
 		</div>
       	   
     </div>
+    
+	<div id="relationArea" class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>		
+        	<h4 class="modal-title"></h4>
+      	</div>   
+    
+		<div id="movieContent" class="modal-body" style="padding: 0px;">
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<ul id="relationContentList" class="col-xs-12 col-sm-12 col-md-12">
+				
+				</ul>
+			</div>
+		</div>
+      	   
+    </div>    
   </div>
 </div>
 <!-- Modal Movie View end -->
+
+<?php 
+/*
+ * 
+ */
+
+/*
+<!-- Modal Movie View -->
+<div id="modalMovieView" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<h4 class="modal-title">Movie View</h4>
+</div>
+ 
+<div id="movieContent" class="modal-body">
+<div class="col-xs-12 col-sm-12 col-md-9">
+<div id="moviePlayer">
+
+<!-- 16:9 aspect ratio -->
+<div id="youtubePlayer" class="embed-responsive embed-responsive-16by9 thumbnail">
+
+</div>
+
+<!-- 4:3 aspect ratio -->
+<!-- div class="embed-responsive embed-responsive-4by3">
+<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wcoXcQDWvLQ?list=PLsqLZbGHLTqNosOF3FDRKVe3RH36W0dtz"></iframe>
+</div-->
+</div>
+<div id="movieInfo">
+					<p><h2 id="movieTitle">Title</h2></p>
+					<p><h4 id="movieSummary">subTitle</h4></p>
+					<p><h6 id="movieDesc">desc</h6></p>
+					</div>
+					</div>
+					<div id="relationList" class="col-xs-12 col-sm-12 col-md-3 panel panel-default" style="background-color: rgb(241,241,241);">
+				<h4 id="relationTitle" class="ml10">BEAUTY STATION</h4>
+
+				<ul id="relationContentList">
+				</ul>
+		
+				</div>
+				</div>
+
+				</div>
+				</div>
+				</div>
+				<!-- Modal Movie View end -->
+
+*/
+?>

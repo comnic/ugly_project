@@ -34,7 +34,7 @@ body {
 	display: block;
 }
 
-#mainTopLeftMenu,#mainTopLeftChannel,#mainTopRight,#footerLogo {
+#mainTopLeftMenu,#mainTopLeftChannel,#relationArea,#mainTopRight,#footerLogo {
 	display: none;
 }
 
@@ -82,7 +82,7 @@ body {
 	height: 364px;
 	border: 1px solid #e6e7e8;
 	float: right;	
-	overflow: auto;
+	overflow: hidden;
 }
 
 
@@ -132,8 +132,18 @@ body {
 }
 
 #movieContent {
-	min-height: 650px;
+	min-height: 600px;
 	padding-left: 25px;	
+}
+
+#modalMovieView #modalMovieDialog .modal-header{
+	border-bottom: none;
+	height: 60px;
+}
+
+#modalMovieView #modalMovieDialog #contentArea .modal-title{
+	margin: -15px auto;
+	width:124px;
 }
 
 /* #moviePlayer {
@@ -142,15 +152,12 @@ body {
 }
  */
 #movieInfo {
+	padding-left: 30px;
 	padding-right: 20px;
 }
 
 #movieContent #movieInfo #movieTitle {
 	color: #ea0465;	
-}
-
-#relationList{
-	display: none;
 }
 
 .footer {
@@ -172,6 +179,10 @@ body {
 
 @media only screen and (min-width: 768px) {
 
+#movieContent {
+	min-height: 650px;
+}
+	
 .panel {	margin-bottom: 0px;}
 
 .footer {
@@ -211,10 +222,21 @@ body {
 #mainTopRight #ranking {
 	margin-top: 19px;	
 }
-	
-	
-	
-	
+
+#modalMovieDialog {
+	width: 720px;
+}
+
+#modalMovieDialog #contentArea {
+	width: 700px;
+	float: none;
+	margin: 0 auto;
+}
+
+
+
+
+
 }
 
 /* Medium devices (desktops, 992px and up) 
@@ -224,11 +246,11 @@ body {
 
 .panel {	margin-bottom: 0px;}
 
-#topChannelList {
+#topChannelList,#bigModalCloseBtn {
 	display: none;
 }
 
-#mainTopLeftMenu,#SNSList,#mainTopLeftChannel,#mainTopRight,#relationList {
+#mainTopLeftMenu,#SNSList,#mainTopLeftChannel,#mainTopRight,#relationArea {
 	display: block;
 }
 
@@ -260,16 +282,12 @@ body {
 }
 
 #relationContentList {
+	padding-left: 10px;
 	overflow: auto;
-	height: 550px;	
-}
-
-#mainTopRight #ranking {
-	margin-top: 19px;	
+	height: 550px;
 }
 
 #relationContentList li {
-	width: 213px;
 	height: 80px;
 }
 
@@ -278,10 +296,27 @@ body {
 	padding-right: 5px;
 }
 
+#mainTopRight #ranking {
+	margin-top: 19px;	
+}
+
 #btnMore{
 	margin-top: 10px;
 }
 
+#modalMovieDialog {
+	width: 950px;	
+}
+
+#modalMovieDialog #contentArea {
+	width: 700px;
+	float: left;
+}
+
+#modalMovieDialog #relationArea {
+	width: 245px;
+	float: right;
+}
 
 
 
@@ -313,9 +348,19 @@ body {
 	height: 620px;
 }
 
+#modalMovieDialog {
+	width: 1120px;	
+}
 
+#modalMovieDialog #contentArea {
+	width: 825px;
+	float: left;
+}
 
-
+#modalMovieDialog #relationArea {
+	width: 274px;
+	float: right;
+}
 
 
 }

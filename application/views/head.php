@@ -31,22 +31,22 @@
 
 <div class="navbar navbar-fixed-top">
 
-  <div id="topNavbar" class="navbar-inner">
-    <div class="container">
-  
-      <div class="nav pull-left">
-	      <a href="/"><img src="/static/images/top_logo.png"></a>
-      </div>
- 
-      <!-- Everything you want hidden at 940px or less, place within here -->
-      <ul id="SNSList" class="collapse navbar-collapse navbar-nav pull-right">
-        	<li><a href="https://www.facebook.com/beautystation2" target="_blank"><img src="/static/images/icon_sns_fb.png"></a></li>
-			<li><a href="#" target="_blank"><img src="/static/images/icon_sns_pinterest.png"></a></li>
-          	<li><a href="#" target="_blank"><img src="/static/images/icon_sns_insta.png"></a></li>
-        </ul>
-
-    </div>
-  </div>
+	<div id="topNavbar" class="navbar-inner">
+		<div class="container">
+	  
+			<div class="nav pull-left">
+				<a href="/"><img src="/static/images/top_logo.png"></a>
+			</div>
+	 
+			<!-- Everything you want hidden at 940px or less, place within here -->
+			<ul id="SNSList" class="collapse navbar-collapse navbar-nav pull-right">
+	        	<li><a href="https://www.facebook.com/beautystation.tv" target="_blank"><img src="/static/images/icon_sns_fb.png"></a></li>
+				<li><a href="#" target="_blank"><img src="/static/images/icon_sns_pinterest.png"></a></li>
+	          	<li><a href="#" target="_blank"><img src="/static/images/icon_sns_insta.png"></a></li>
+			</ul>
+	
+	    </div>
+	</div>
   
 </div>
 
@@ -72,7 +72,7 @@
 ?>
            	<li><a href="/movie_list/index/<?php echo($item['cc_idx']);?>"><h5><span class="glyphicon glyphicon-facetime-video"></span> <?php echo($item['cc_title']);?> <?php if($item['new_cnt'] > 0){ ?><span class="badge"><?php echo($item['new_cnt']);?></span><?php }?></h5></a></li>
 <?php 
-}
+	}
 ?>          
       </ul>
     </div><!-- /.navbar-collapse -->

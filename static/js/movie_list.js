@@ -10,7 +10,9 @@ $(document).ready(function(e) {
 		interval: 2000
 	});	
 	
-	getMovieContent(category_idx, ++page);
+    setContentView(17);
+    
+    getMovieContent(category_idx, ++page);
 	
 	$(window).scroll(function(){
 		if($(window).scrollTop() == $(document).height() - $(window).height()){
@@ -32,27 +34,9 @@ $(document).ready(function(e) {
 	$(document).on("click", "#movieList li", function(){
 	
 		var cidx = $(this).data("cidx");
+		
+		setContentView(cidx);
 
-		$.ajax({
-			type: "POST",
-			url: "/movie_list/get_content_ajax/" + cidx,
-			data: "",
-			datatype: "json",
-			success: function(data)
-			{
-				//console.log(data);
-				
-				var item = $.parseJSON(data);
-				
-				var cont = new Content(item.idx, item.category, item.kind, item.title, item.summary, item.content, item.cnt, item.movie_link);
-				//console.log(cont);
-				
-				setContentView(cont);
-				
-				$('#modalMovieView').modal('show');
-				
-			}
-		});
 	});
 	
 	$("#btnMoreContentList").click(function(){
@@ -102,33 +86,55 @@ function getMovieContent(cat, page){
 		});
 }
 
-function setContentView(cont){
-	$("#youtubePlayer").html("<iframe class=\"embed-responsive-item\" src=\""+ cont.link +"\" width=\"623\" height=\"325\"></iframe>");
-	$("#movieTitle").html(cont.title);
-	$("#movieSummary").html(cont.summary);
-	$("#movieDesc").html(cont.content);
+function setContentView(cidx){
 	
-	$.getJSON( "/movie_list/get_content_list/"+cont.category+"/1", function( data ) {
-	
-		console.log(data);
-		$("#relationContentList").empty();
-	
-		//add relation list
-		$.each(data.items, function(idx, item){
-			if(idx > 5)
-				return false;
-			
-			$("#relationContentList").append("\
-				<li class=\"p5\" data-cidx=\""+item.idx+"\">\
-					<div>\
-						<div class=\"col-md-6 thumbnail\"><img src=\""+item.img+"\"></div>\
-						<div class=\"col-md-6 content-item-txt\"><h6>"+ item.title +"</h6></div>\
-	        		</div>\
-    	        </li>\
-			");
-		});
 
-	});
+	$.ajax({
+		type: "POST",
+		url: "/movie_list/get_content_ajax/" + cidx,
+		data: "",
+		datatype: "json",
+		success: function(data)
+		{
+			//console.log(data);
+			
+			var item = $.parseJSON(data);
+			
+			var cont = new Content(item.idx, item.category, item.kind, item.title, item.summary, item.content, item.cnt, item.movie_link);
+			//console.log(cont);
+			
+			
+			$("#youtubePlayer").html("<iframe class=\"embed-responsive-item\" src=\""+ cont.link +"\" width=\"623\" height=\"325\"></iframe>");
+			$("#movieTitle").html(cont.title);
+			$("#movieSummary").html(cont.summary);
+			$("#movieDesc").html(cont.content);
+			
+			$.getJSON( "/movie_list/get_content_list/"+cont.category+"/1", function( data ) {
+			
+				console.log(data);
+				$("#relationContentList").empty();
+			
+				//add relation list
+				$.each(data.items, function(idx, item){
+					if(idx > 5)
+						return false;
+					
+					$("#relationContentList").append("\
+						<li class=\"p5\" data-cidx=\""+item.idx+"\">\
+							<div>\
+								<div class=\"col-md-5 thumbnail\"><img src=\""+item.img+"\"></div>\
+								<div class=\"col-md-6 content-item-txt\"><h6>"+ item.title +"</h6></div>\
+			        		</div>\
+		    	        </li>\
+					");
+				});
+
+			});
+			
+			$('#modalMovieView').modal('show');
+			
+		}
+	});	
 
 
 }
