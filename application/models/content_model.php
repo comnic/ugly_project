@@ -23,7 +23,10 @@ class Content_model extends CI_Model{
 	}
 	
 	function getContent($idx){
-		return $this->db->query("SELECT c_idx as idx, cc_idx as category, c_kind as kind, c_title as title, c_summary as summary, c_content as content, c_movie_link as movie_link, c_count as cnt FROM contents WHERE c_idx='$idx' ")->row_array();
+		if($idx == 0)
+			return $this->db->query("SELECT c_idx as idx, cc_idx as category, c_kind as kind, c_title as title, c_summary as summary, c_content as content, c_movie_link as movie_link, c_count as cnt FROM contents ORDER BY c_idx DESC LIMIT 1 ")->row_array();
+		else
+			return $this->db->query("SELECT c_idx as idx, cc_idx as category, c_kind as kind, c_title as title, c_summary as summary, c_content as content, c_movie_link as movie_link, c_count as cnt FROM contents WHERE c_idx='$idx' ORDER BY c_idx DESC")->row_array();
 	}
 
 }

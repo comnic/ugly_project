@@ -41,7 +41,7 @@
 			<!-- Everything you want hidden at 940px or less, place within here -->
 			<ul id="SNSList" class="collapse navbar-collapse navbar-nav pull-right">
 	        	<li><a href="https://www.facebook.com/beautystation.tv" target="_blank"><img src="/static/images/icon_sns_fb.png"></a></li>
-				<li><a href="#" target="_blank"><img src="/static/images/icon_sns_pinterest.png"></a></li>
+				<li><a href="#" target="_blank"><img src="/static/images/icon_sns_youtube.png"></a></li>
 	          	<li><a href="#" target="_blank"><img src="/static/images/icon_sns_insta.png"></a></li>
 			</ul>
 	

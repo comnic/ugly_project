@@ -160,6 +160,10 @@ body {
 	color: #ea0465;	
 }
 
+#relationContentList li {
+	cursor: pointer;	
+}
+
 .footer {
 	height: 43px;
 	background-color: #444444;
@@ -283,12 +287,17 @@ body {
 
 #relationContentList {
 	padding-left: 10px;
+	padding-right: 10px;
 	overflow: auto;
 	height: 550px;
 }
 
 #relationContentList li {
-	height: 80px;
+	height: 73px;
+}
+
+#relationContentList li:hover {
+	background-color: #ffd2d5;
 }
 
 .content-item-txt {
@@ -360,6 +369,10 @@ body {
 #modalMovieDialog #relationArea {
 	width: 274px;
 	float: right;
+}
+
+#relationContentList li {
+	height: 81px;
 }
 
 

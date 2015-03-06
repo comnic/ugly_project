@@ -50,9 +50,9 @@ class Movie_list extends MH_Controller {
 			return false;
 		}
 			
-		$pidx = $this->_segment[3];
+		$cidx = $this->_segment[3];
 
-		$data = $this->content_model->getContent($pidx);
+		$data = $this->content_model->getContent($cidx);
 		
 		$this->load->view('content_info_json', array("data"=>$data));
 		

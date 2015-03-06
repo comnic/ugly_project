@@ -10,7 +10,8 @@ $(document).ready(function(e) {
 		interval: 2000
 	});	
 	
-    setContentView(17);
+    //0일때 최근 컨텐츠를 반환하다.
+    setContentView(0, true);
     
     getMovieContent(category_idx, ++page);
 	
@@ -35,9 +36,18 @@ $(document).ready(function(e) {
 	
 		var cidx = $(this).data("cidx");
 		
-		setContentView(cidx);
+		setContentView(cidx, true);
 
 	});
+
+	$(document).on("click", "#relationContentList li", function(){
+		
+		var cidx = $(this).data("cidx");
+		
+		setContentView(cidx, false);
+
+	});
+	
 	
 	$("#btnMoreContentList").click(function(){
 		getMovieContent(category_idx, ++page);
@@ -86,7 +96,7 @@ function getMovieContent(cat, page){
 		});
 }
 
-function setContentView(cidx){
+function setContentView(cidx, rel){
 	
 
 	$.ajax({
@@ -109,27 +119,29 @@ function setContentView(cidx){
 			$("#movieSummary").html(cont.summary);
 			$("#movieDesc").html(cont.content);
 			
-			$.getJSON( "/movie_list/get_content_list/"+cont.category+"/1", function( data ) {
-			
-				console.log(data);
-				$("#relationContentList").empty();
-			
-				//add relation list
-				$.each(data.items, function(idx, item){
-					if(idx > 5)
-						return false;
-					
-					$("#relationContentList").append("\
-						<li class=\"p5\" data-cidx=\""+item.idx+"\">\
-							<div>\
-								<div class=\"col-md-5 thumbnail\"><img src=\""+item.img+"\"></div>\
-								<div class=\"col-md-6 content-item-txt\"><h6>"+ item.title +"</h6></div>\
-			        		</div>\
-		    	        </li>\
-					");
-				});
+			if(rel){
+				$.getJSON( "/movie_list/get_content_list/"+cont.category+"/1", function( data ) {
+				
+					//console.log(data);
+					$("#relationContentList").empty();
+				
+					//add relation list
+					$.each(data.items, function(idx, item){
+						if(idx > 5)
+							return false;
+						
+						$("#relationContentList").append("\
+							<li class=\"p5\" data-cidx=\""+item.idx+"\">\
+								<div>\
+									<div class=\"col-md-5 thumbnail\"><img src=\""+item.img+"\"></div>\
+									<div class=\"col-md-6 content-item-txt\"><h6>"+ item.title +"</h6></div>\
+				        		</div>\
+			    	        </li>\
+						");
+					});
 
-			});
+				});
+			}
 			
 			$('#modalMovieView').modal('show');
 			
