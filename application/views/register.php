@@ -2,11 +2,11 @@
   <div class="span4"></div>
   <div class="span4">
     <?php echo validation_errors(); ?>
-    <form class="form-horizontal" action="/index.php/auth/register" method="post">
+    <form class="form-horizontal" action="/auth/register" method="post">
       <div class="control-group">
         <label class="control-label" for="inputEmail">아이디</label>
         <div class="controls">
-          <input type="text" id="m_id" name="m_id" value="<?php echo set_value('m_id'); ?>" placeholder="아이디">
+          <input type="text" id="email" name="email" value="<?php echo set_value('email'); ?>" placeholder="이메일주소">
         </div>
       </div>
       <div class="control-group">
@@ -25,12 +25,6 @@
         <label class="control-label" for="name">이름</label>
         <div class="controls">
           <input type="text" id="name" name="name" value="<?php echo set_value('name'); ?>"  placeholder="이름">
-        </div>
-      </div>
-      <div class="control-group">
-        <label class="control-label" for="name">이메일</label>
-        <div class="controls">
-          <input type="text" id="email" name="email" value="<?php echo set_value('email'); ?>"  placeholder="이메일">
         </div>
       </div>
       <div class="control-group">

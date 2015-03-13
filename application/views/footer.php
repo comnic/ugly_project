@@ -3,7 +3,7 @@
 <p></p>
 
 <!-- footer -->
-<footer class="footer">
+<footer class="footer navbar-fixed-bottom">
       <div class="container">
         <p>이용약관 ㅣ 개인정보취급방침 ㅣ 책임의 한계와 법적고지 ㅣ 고객센터 <img id="footerLogo" src="../../static/images/logo_footer.png"></p>
       </div>

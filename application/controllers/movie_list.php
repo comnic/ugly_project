@@ -26,17 +26,17 @@ class Movie_list extends MH_Controller {
 		if(count($this->_segment) >= 3){
 			$this->_category = $this->_segment[3];
 		}
-/*		
-		$data = $this->content_model->getList("MV", $this->_category, $this->_page, $this->_cntPerPage);
-*/
-		$data['category'] = $this->_category;
 		
+		$this->load->view('head');
+		
+		$data['category'] = $this->_category;
+				
 		$data['page'] = $this->_page;
 		$data['cntPerPage'] = $this->_cntPerPage;
 
 		$data['channels'] = $this->data_model->getChannelList("MV");
-
-		$this->load->view('head', array("data"=>$data));
+		
+		$data['best'] = $this->content_model->getBestContentsList();
 		
 		$this->load->view('main', array("data"=>$data));
 		
@@ -72,5 +72,10 @@ class Movie_list extends MH_Controller {
 		$data['cntPerPage'] = $this->_cntPerPage;
 		
 		$this->load->view('content_list_json', array("data"=>$data));
+	}
+	
+	function get_best_content(){
+		$data = $this->content_model->getBestContentsList();
+		$this->load->view('output_json', array("data"=>$data));
 	}
 }

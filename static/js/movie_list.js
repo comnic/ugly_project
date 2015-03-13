@@ -11,10 +11,11 @@ $(document).ready(function(e) {
 	});	
 	
     //0일때 최근 컨텐츠를 반환하다.
-    setContentView(0, true);
+    //setContentView(0, true);
     
     getMovieContent(category_idx, ++page);
-	
+    //getBestContents();
+    
 	$(window).scroll(function(){
 		if($(window).scrollTop() == $(document).height() - $(window).height()){
 			getMovieContent(category_idx, ++page);
@@ -32,7 +33,7 @@ $(document).ready(function(e) {
 		
 	});
 	
-	$(document).on("click", "#movieList li", function(){
+	$(document).on("click", "#movieList li, #ranking li", function(){
 	
 		var cidx = $(this).data("cidx");
 		
@@ -65,6 +66,26 @@ $(document).ready(function(e) {
 
 
 });
+
+function getBestContents(){
+	$.getJSON( "/movie_list/get_best_content/", function( data ) {
+		
+		console.log(data);
+		
+		$("#ranking").empty();
+		
+		//add ranking list
+		var rank = 1;
+		$.each(data, function(idx, item){
+			if(idx > 10)
+				return false;
+			
+			$("#ranking").append("<li><a href=\"#\"><h5><span class=\"badge\">"+ rank++ +"</span> &nbsp;&nbsp;"+item.title+"</h5></a></li>");
+		});		
+	});
+	
+	
+}
 
 function getMovieContent(cat, page){
 

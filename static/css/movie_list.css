@@ -3,52 +3,6 @@
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 
-body {
-	background-color: #f1f1f2;
-	padding-top: 80px;
-}
-
-.p5 {
-	padding: 5px;
-}
-
-.pl10 {
-	padding-left: 10px;
-}
-
-.ml10 {
-	margin-left: 10px;
-}
-
-.carousel {
-	margin-bottom: 0px;	
-}
-
-#topNavbar {
-	background-color: #ea0465;
-	background-image: none;
-	height: 73px;
-}
-
-#topChannelList {
-	display: block;
-}
-
-#mainTopLeftMenu,#mainTopLeftChannel,#relationArea,#mainTopRight,#footerLogo {
-	display: none;
-}
-
-#SNSList { 
-	margin-top: 25px;
-}
-
-#SNSList li { 
-	margin-left: 10px;
-}
-
-#SNSList li>a{
-	padding: inherit;
-}
 
 #mainBanner{
 	width: 100%;
@@ -92,6 +46,7 @@ body {
 
 #mainTopRight #ranking li {
 	margin-top: 5px;
+	cursor: pointer;
 }
 
 #mainList {
@@ -164,82 +119,25 @@ body {
 	cursor: pointer;	
 }
 
-.footer {
-	height: 43px;
-	background-color: #444444;
-	color: #CCC;
-	text-align: right;
-	font-size: 11px;
-}
-
-.footer p {
-	margin-top: 10px;
-}
-
 
 /* Medium devices (desktops, 768px and up) 
 @media (min-width: @screen-md-min) {
 */
 
 @media only screen and (min-width: 768px) {
-
-#movieContent {
-	min-height: 650px;
-}
-	
-.panel {	margin-bottom: 0px;}
-
-.footer {
-	font-size: 14px;
-}
-
-#SNSList {
-	display: block;
-}
-
-#footerLogo{
-	display: inline;
-}
-
-#mainTopLeft #mainTopLeftChannel {
-	height: 236px;
-}	
-
-#movieList li {
-	width: 235px;
-	height: 200px;
-}
-
 #movieList li .content-item-over {
-	width: 225px;
+	left: auto;
 }
 
-#movieContent {
-	min-height: 650px;
-}
-
-/* #moviePlayer {
-	width: 525px;
-	height: 350px;
-}
- */
-#mainTopRight #ranking {
-	margin-top: 19px;	
-}
-
-#modalMovieDialog {
-	width: 720px;
-}
-
-#modalMovieDialog #contentArea {
-	width: 700px;
-	float: none;
-	margin: 0 auto;
-}
-
-
-
-
+.panel{margin-bottom: 0px;}
+#movieContent{min-height: 650px;}
+#mainTopLeft #mainTopLeftChannel{height: 236px;}	
+#movieList li{width: 235px;height: 200px;}
+#movieList li .content-item-over{width: 225px;}
+#movieContent{min-height: 650px;}
+#mainTopRight #ranking{margin-top: 19px;}
+#modalMovieDialog{width: 720px;}
+#modalMovieDialog #contentArea{width: 700px;float: none;margin: 0 auto;}
 
 }
 
@@ -248,86 +146,24 @@ body {
 */
 @media only screen and (min-width: 992px) {
 
-.panel {	margin-bottom: 0px;}
-
-#topChannelList,#bigModalCloseBtn {
-	display: none;
-}
-
-#mainTopLeftMenu,#SNSList,#mainTopLeftChannel,#mainTopRight,#relationArea {
-	display: block;
-}
-
-#channelList li {
-	margin-bottom: 20px;	
-}
-
-#mainTopLeft #mainTopLeftChannel {
-	height: 236px;
-}	
-
-#mainTopRight {
-	height: 300px;
-}
-
-#movieList li {
-	width: 235px;
-	height: 200px;
-}
-
-
-#movieList li .content-item-over {
-	width: 225px;
-}
-
-
-#movieContent {
-	min-height: 650px;
-}
-
-#relationContentList {
-	padding-left: 10px;
-	padding-right: 10px;
-	overflow: auto;
-	height: 550px;
-}
-
-#relationContentList li {
-	height: 73px;
-}
-
-#relationContentList li:hover {
-	background-color: #ffd2d5;
-}
-
-.content-item-txt {
-	padding-left: 10px;
-	padding-right: 5px;
-}
-
-#mainTopRight #ranking {
-	margin-top: 19px;	
-}
-
-#btnMore{
-	margin-top: 10px;
-}
-
-#modalMovieDialog {
-	width: 950px;	
-}
-
-#modalMovieDialog #contentArea {
-	width: 700px;
-	float: left;
-}
-
-#modalMovieDialog #relationArea {
-	width: 245px;
-	float: right;
-}
-
-
+#topChannelList{display: none;}
+#bigModalCloseBtn{display: none;}
+#mainTopLeftMenu,#mainTopLeftChannel,#mainTopRight,#relationArea{display: block;}
+#channelList li{margin-bottom: 20px;}
+#mainTopLeft #mainTopLeftChannel{height: 236px;}	
+#mainTopRight {height: 300px;}
+#movieList li{width: 235px;height: 200px;}
+#movieList li .content-item-over{width: 225px;}
+#movieContent{min-height: 650px;}
+#relationContentList{padding-left: 10px;padding-right: 10px;overflow: auto;height: 550px;}
+#relationContentList li{height: 73px;}
+#relationContentList li:hover{background-color: #ffd2d5;}
+.content-item-txt{padding-left: 10px;padding-right: 5px;}
+#mainTopRight #ranking{margin-top: 19px;}
+#btnMore{margin-top: 10px;}
+#modalMovieDialog{width: 950px;}
+#modalMovieDialog #contentArea{width: 700px;float: left;}
+#modalMovieDialog #relationArea{width: 245px;float: right;}
 
 }
 
@@ -336,44 +172,14 @@ body {
 */
 @media only screen and (min-width: 1200px) {
 
-#mainTopLeft #mainTopLeftChannel {
-	height: 302px;
-}	
-
-#mainTopRight {
-	height: 364px;
-}
-
-#movieList li {
-	width: 285px;
-	height: 245px;
-}
-
-#movieList li .content-item-over {
-	width: 275px;
-}
-
-#relationList {
-	height: 620px;
-}
-
-#modalMovieDialog {
-	width: 1120px;	
-}
-
-#modalMovieDialog #contentArea {
-	width: 825px;
-	float: left;
-}
-
-#modalMovieDialog #relationArea {
-	width: 274px;
-	float: right;
-}
-
-#relationContentList li {
-	height: 81px;
-}
-
+#mainTopLeft #mainTopLeftChannel{height: 302px;}
+#mainTopRight{height: 364px;}
+#movieList li{width: 285px;height: 245px;}
+#movieList li .content-item-over{width: 275px;}
+#relationList{height: 620px;}
+#modalMovieDialog{width: 1120px;}
+#modalMovieDialog #contentArea{width: 825px;float: left;}
+#modalMovieDialog #relationArea{width: 274px;float: right;}
+#relationContentList li{height: 81px;}
 
 }

@@ -6,6 +6,37 @@
 	var category_idx = '<?php echo($data['category']);?>';
 </script>
 
+
+
+<nav id="topChannelList" class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">채널목록</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+      <ul class="nav navbar-nav navbar-right">
+<?php 
+	foreach($data['channels']['items'] as $item){
+?>
+           	<li><a href="/movie_list/index/<?php echo($item['cc_idx']);?>"><h5><span class="glyphicon glyphicon-facetime-video"></span> <?php echo($item['cc_title']);?> <?php if($item['new_cnt'] > 0){ ?><span class="badge"><?php echo($item['new_cnt']);?></span><?php }?></h5></a></li>
+<?php 
+	}
+?>          
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
 <div id="mainTop" class="col-xs-12 col-sm-12 col-md-12">
 	<div id="mainTopLeft" class="col-xs-12 col-sm-2 col-md-2">
     	<div id="mainTopLeftMenu" class="panel panel-default">
@@ -71,16 +102,14 @@
         	<img src="../../static/images/title_best.png">
         	<img src="../../static/images/line_best.png">
     		<ul id="ranking">
-            	<li><a href="#"><h5><span class="badge">1</span> &nbsp;&nbsp;혼자서도 잘해요! <span class="label label-danger">New</span></h5></a></li>
-            	<li><a href="#"><h5><span class="badge">2</span> &nbsp;&nbsp;트루미쇼 제 1화</h5></a></li>
-               	<li><a href="#"><h5><span class="badge">3</span> &nbsp;&nbsp;트루미쇼 제 3화</h5></a></li>
-               	<li><a href="#"><h5><span class="badge">4</span> &nbsp;&nbsp;트루미쇼 제 3화</h5></a></li>
-               	<li><a href="#"><h5><span class="badge">5</span> &nbsp;&nbsp;트루미쇼 제 3화</h5></a></li>
-               	<li><a href="#"><h5><span class="badge">6</span> &nbsp;&nbsp;트루미쇼 제 3화</h5></a></li>
-               	<li><a href="#"><h5><span class="badge">7</span> &nbsp;&nbsp;트루미쇼 제 3화</h5></a></li>
-               	<li><a href="#"><h5><span class="badge">8</span> &nbsp;&nbsp;트루미쇼 제 3화</h5></a></li>
-               	<li><a href="#"><h5><span class="badge">9</span> &nbsp;&nbsp;트루미쇼 제 3화</h5></a></li>
-               	<li><a href="#"><h5><span class="badge">10</span> &nbsp;&nbsp;트루미쇼 제 3화</h5></a></li>
+<?php 
+$rank = 1;
+foreach($data['best'] as $item){
+?>
+				<li data-cidx="<?php echo($item['idx']);?>"><h5><span class="badge"><?php echo($rank++);?></span> &nbsp;&nbsp;<?php echo(hc($item['title'], 16));?></h5></li>
+<?php 
+}
+?>
             </ul>
         </div>
     </div>
@@ -152,6 +181,24 @@
 <!-- Modal Movie View end -->
 
 <?php 
+
+
+function hc( $str, $n = 500, $end_char = ' ...' )
+{
+	$CI =& get_instance();
+	$charset = $CI->config->item('charset');
+
+	if ( mb_strlen( $str , $charset) < $n ) {
+		return $str ;
+	}
+
+	$str = preg_replace( "/\s+/iu", ' ', str_replace( array( "\r\n", "\r", "\n" ), ' ', $str ) );
+
+	if ( mb_strlen( $str , $charset) <= $n ) {
+		return $str;
+	}
+	return mb_substr(trim($str), 0, $n ,$charset) . $end_char ;
+}
 /*
  * 
  */

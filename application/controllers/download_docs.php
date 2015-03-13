@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Rms extends MH_Controller {
+class Download_docs extends MH_Controller {
 
 	public function index()
 	{
