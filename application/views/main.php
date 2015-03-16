@@ -74,13 +74,13 @@
               <!-- Wrapper for slides -->
               <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                  <img src="/static/images/main_banner_01.jpg" width="100%" alt="메인배너 1">
+                  <img src="/static/images/banner/main_banner_01.jpg" width="100%" alt="이청아와 함께하는 리얼 뷰티쇼!">
                 </div>
                 <div class="item">
-                  <img src="/static/images/main_banner_02.jpg" width="100%" alt="메인배너 2">
+                  <img src="/static/images/banner/main_banner_02.jpg" width="100%" alt="홍스광뷰티!">
                 </div>
                 <div class="item">
-                  <img src="/static/images/main_banner_03.jpg" width="100%" alt="메인배너 3">
+                  <img src="/static/images/banner/main_banner_03.jpg" width="100%" alt="뷰티스테이션">
                 </div>
               </div>
             
@@ -103,10 +103,11 @@
         	<img src="../../static/images/line_best.png">
     		<ul id="ranking">
 <?php 
+$this->load->helper('text');
 $rank = 1;
 foreach($data['best'] as $item){
 ?>
-				<li data-cidx="<?php echo($item['idx']);?>"><h5><span class="badge"><?php echo($rank++);?></span> &nbsp;&nbsp;<?php echo(hc($item['title'], 16));?></h5></li>
+				<li data-cidx="<?php echo($item['idx']);?>"><h5><span class="badge"><?php echo($rank++);?></span> &nbsp;&nbsp;<?php echo(character_limiter($item['title'], 20));?></h5></li>
 <?php 
 }
 ?>
@@ -182,23 +183,6 @@ foreach($data['best'] as $item){
 
 <?php 
 
-
-function hc( $str, $n = 500, $end_char = ' ...' )
-{
-	$CI =& get_instance();
-	$charset = $CI->config->item('charset');
-
-	if ( mb_strlen( $str , $charset) < $n ) {
-		return $str ;
-	}
-
-	$str = preg_replace( "/\s+/iu", ' ', str_replace( array( "\r\n", "\r", "\n" ), ' ', $str ) );
-
-	if ( mb_strlen( $str , $charset) <= $n ) {
-		return $str;
-	}
-	return mb_substr(trim($str), 0, $n ,$charset) . $end_char ;
-}
 /*
  * 
  */

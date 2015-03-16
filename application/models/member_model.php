@@ -24,9 +24,11 @@ class Member_model extends CI_Model{
 	
 	function add($option)
 	{
-		$this->db->set('mb_email', $option['email']);
+		$this->load->library('security');
+		
+		$this->db->set('mb_email', $this->security->xss_clean($option['email']));
 		$this->db->set('mb_passwd', $option['password']);
-		$this->db->set('mb_name', $option['name']);
+		$this->db->set('mb_name', $this->security->xss_clean($option['name']));
 		$this->db->set('mb_reg_date', 'NOW()', false);
 		$this->db->insert('member_basic');
 		$result = $this->db->insert_id();

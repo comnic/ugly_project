@@ -26,6 +26,8 @@ a:active  {color:#333333; background-color:transparent; text-decoration:none}
 ul, ol {margin: 0px;padding: 0px;}
 li {list-style: none;}
 
+.ellipsis{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis}
+
 .thumbnail {margin-bottom: 0px;}
 
 .p5 {padding: 5px;}
@@ -39,7 +41,7 @@ li {list-style: none;}
 #SNSList li>a{padding: inherit;}
 .footer{height: 43px;background-color: #444444;color: #CCC;text-align: right;font-size: 11px;}
 .footer p{margin-top: 10px;}
-
+.footer p a {color: #CCC;}
 /* Medium devices (desktops, 768px and up) 
 @media (min-width: @screen-md-min) {
 */

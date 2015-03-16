@@ -54,6 +54,10 @@ class Movie_list extends MH_Controller {
 
 		$data = $this->content_model->getContent($cidx);
 		
+		$this->load->helper('url');
+		
+		$data['content'] = auto_link(str_replace("\n", "<br>", $data['content']), 'both', TRUE);
+		
 		$this->load->view('content_info_json', array("data"=>$data));
 		
 	}
